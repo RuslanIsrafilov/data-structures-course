@@ -1,6 +1,9 @@
 #include <stack>
+#include <stack>
+#include <tuple>
 #include <stdexcept>
 #include <iostream>
+#include <iomanip>
 
 template<typename Key, typename Value>
 class Node {
@@ -127,6 +130,25 @@ public:
 
   bool empty() const {
     return _root == nullptr;
+  }
+
+  void debug_print() const {
+    if (_root) {
+      debug_print_inorder(_root, 0);
+    }
+  }
+
+  void debug_print_inorder(Node<Key, Value> *n, int level) const {
+    if (n->right()) {
+      debug_print_inorder(n->right(), level + 1);
+    }
+
+    std::cout << std::setw(level * 5) << ' '
+              << n->key() << std::endl;
+
+    if (n->left()) {
+      debug_print_inorder(n->left(), level + 1);
+    }
   }
 
 private:

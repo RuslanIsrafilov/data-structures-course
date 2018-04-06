@@ -13,7 +13,7 @@ int main(int argc, char const *argv[]) {
   map.insert(12, "F");
   map.insert(17, "G");
 
-  std::cout << "map.find(3) = " << map.find(3) << std::endl;
+  map.debug_print();
 
   return 0;
 }
