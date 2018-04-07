@@ -1,2 +1,5 @@
 # Exclude binary files
 *.exe
+
+# exclude MacOS system files
+.DS_Store
