@@ -1,6 +1,6 @@
 # List of exercises
 
-## <center> Playground exercises </center>
+## Playground exercises
 ### 1. Removing the duplicates
 Write code to remove duplicates from an unsorted linked list.
 
@@ -29,7 +29,7 @@ Implement a function to check if a tree is balanced. For the purposes of this qu
 ### Notes
 In order to complete the task 3.1 and 3.3, [tree traversal][tree_traverse] algorithms may be useful. More information about tree terminology [Wikipedia][tree_term].
 
-## <center> Assessment exercises </center>
+## Assessment exercises
 ### 1. Balanced brackets
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`.
 
@@ -46,10 +46,13 @@ You have `N` stacks of integer numbers. Let us define height of a stack as sum o
 
 **ILLUSTRATION**  
 Initially, the stacks look like this:  
-<center>![](https://s3.amazonaws.com/hr-challenge-images/21404/1465645257-57311b88de-piles1.png)</center>
-</br>
+<p align="center">
+  <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645257-57311b88de-piles1.png" />
+</p>
 Observe that the three stacks are not all the same height. To make all stacks of equal height, we remove the first cylinder from stacks  and , and then remove the top two cylinders from stack  (shown below).
-<center>![](https://s3.amazonaws.com/hr-challenge-images/21404/1465645312-e48f85c176-piles2.png)</center>
+<p align="center">
+  <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645312-e48f85c176-piles2.png" />
+</p>
 
 ### 3. Largest rectangle
 Some company that is planning to demolish a number of old, unoccupied buildings and construct a shopping mall in their place. Your task is to find the largest solid area on which the mall can be constructed.
@@ -57,7 +60,9 @@ Some company that is planning to demolish a number of old, unoccupied buildings 
 There are a number of buildings in a certain two-dimensional landscape. Each building has a height, given by `h[i]`. If you join `k` adjacent buildings, they will form a solid rectangle of area `k x min(h[i], h[i + 1], ..., h[i + k - 1])`.
 
 **ILLUSTRATION**
-<center>![](https://s3.amazonaws.com/hr-challenge-images/8136/1436794554-75e178e325-drawing47.svg)</center>
+<p align="center">
+  <img src="https://s3.amazonaws.com/hr-challenge-images/8136/1436794554-75e178e325-drawing47.svg" />
+</p>
 
 ### 4. Rock on the grid
 You are given a grid with both sides equal to `n`. Rows and columns are numbered from `0` to `n - 1`, some cells on the grid are forbidden (you **can't** move through them). There is a [rock][rock_wiki] on the intersection `(i, j)`. In a single step you move from a point `(a, b)` to a point `(c, d)` if there is a straight horizontal line or a straight vertical line connecting these two and not containing any forbidden cell.
