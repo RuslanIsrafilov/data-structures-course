@@ -41,6 +41,28 @@ By this logic, we say a sequence of brackets is considered to be balanced if the
 
 Given  strings of brackets, determine whether each sequence of brackets is balanced. If a string is balanced, print `YES` on a new line; otherwise, print `NO` on a new line.
 
+**Input format**  
+The first line contains a single integer, `n`, denoting the number of strings.
+Each line `i` of the `n` subsequent lines consists of a single string, `s`, denoting a sequence of brackets.
+
+**Output format**  
+For each string, print whether or not the string of brackets is balanced on a new line. If the brackets are balanced, print `YES`; otherwise, print `NO`.
+
+**Sample input**  
+```
+3
+{[()]}
+{[(])}
+{{[[(())]]}}
+```
+
+**Sample Output**
+```
+YES
+NO
+YES
+```
+
 ### 2. Equal stacks
 You have `N` stacks of integer numbers. Let us define height of a stack as sum of all numbers containing in that stack. Find the maximum possible height of the stacks such that all of the stacks are exactly the same height. This means you must remove zero or more integers from the top of zero or more of the `N` stacks until they are all the same height, then print the height. The removals must be performed in such a way as to maximize the height.
 
@@ -54,6 +76,29 @@ Observe that the three stacks are not all the same height. To make all stacks of
   <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645312-e48f85c176-piles2.png" />
 </p>
 
+**Input Format**  
+The first line contains `n` space-separated integers, describing the respective number of items in stacks `1`, `2`, ... `n`. The subsequent lines describe the respective numbers in a stack from top to bottom:
+* The second line contains `m_1` space-separated integers in stack `1`.
+* The third line contains `m_2` space-separated integers in stack `2`.
+* ...
+* The last line contains `m_n` space-separated integers in stack `n`.
+
+**Output Format**  
+Print a single integer denoting the maximum height at which all stacks will be of equal height.
+
+**Sample Input** (in case of three stacks)
+```
+5 3 4
+3 2 1 1 1
+4 3 2
+1 1 4 1
+```
+
+**Sample Output**
+```
+5
+```
+
 ### 3. Largest rectangle
 Some company that is planning to demolish a number of old, unoccupied buildings and construct a shopping mall in their place. Your task is to find the largest solid area on which the mall can be constructed.
 
@@ -63,6 +108,23 @@ There are a number of buildings in a certain two-dimensional landscape. Each bui
 <p align="center">
   <img src="https://s3.amazonaws.com/hr-challenge-images/8136/1436794554-75e178e325-drawing47.svg" />
 </p>
+
+**Input Format**  
+The first line contains `n`, the number of buildings. The second line contains `n` space-separated integers, each representing the height of a building.
+
+**Output Format**  
+Print a long integer representing the maximum area of rectangle formed.
+
+**Sample Input**
+```
+5
+1 2 3 4 5
+```
+
+**Sample Output**
+```
+9
+```
 
 ### 4. Rock on the grid
 You are given a grid with both sides equal to `n`. Rows and columns are numbered from `0` to `n - 1`, some cells on the grid are forbidden (you **can't** move through them). There is a [rock][rock_wiki] on the intersection `(i, j)`. In a single step you move from a point `(a, b)` to a point `(c, d)` if there is a straight horizontal line or a straight vertical line connecting these two and not containing any forbidden cell.
@@ -74,6 +136,29 @@ You are expected to complete implementation of the following function. Forbidden
 int minimumMoves(const char *grid, int n, int start_i, int start_j,
                                           int goal_i,  int goal_j);
 ```
+
+**Input Format**  
+The first line contains an integer `n`, the size of the grid.
+The following `N` lines contains a string of length `n` that consists of one of the following characters: `X` or `.`, where `X` denotes a forbidden cell, and `.` denotes an allowed cell.
+The last line contains space separated integers `i`, `j`, denoting the initial position of the castle, and `i'`, `j'`, denoting the goal position.
+
+**Output Format**  
+Output an integer denoting the minimum number of steps required to move the castle to the goal position.
+
+**Sample Input**
+```
+3
+.X.
+.X.
+...
+0 0 0 2
+```
+
+**Sample Output**
+```
+3
+```
+
 ### 5. Find the running median
 The median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value. To find the median, you must first sort your set of integers in non-decreasing order, then:
 * If your set contains an odd number of elements, the median is the middle element of the sorted sample. In the sorted set `[1, 2, 3]`, `2` is the median.
@@ -95,6 +180,98 @@ For example you are given the list `[12, 4, 5, 3, 8, 7]`, so we must print the n
 4. [ 12, 4, 5, 3 ] -> (4 + 5) / 2 = 4.5
 5. [ 12, 4, 5, 3, 8 ] -> 5
 5. [ 12, 4, 5, 3, 8, 7 ] -> (5 + 7) / 2 = 6
+```
+
+**Input Format**  
+The first line contains a single integer, `n`, denoting the number of integers in the data stream.
+Each line `i` of the `n` subsequent lines contains an integer, `a_i`, to be added to your list.
+
+**Output Format**  
+After each new integer is added to the list, print the list's updated median on a new line as a single double-precision number scaled to `1` decimal place (i.e., `12.3` format).
+
+**Sample Input**
+```
+6
+12
+4
+5
+3
+8
+7
+```
+
+**Sample Output**
+```
+12.0
+8.0
+5.0
+4.5
+5.0
+6.0
+```
+
+### 6. Subsequence Weighting
+You are given a sequence `A` in which every element is a pair of integers i.e. `A = [ (a_1, w_1), (a_2, w_2),..., (a_N, w_N) ]`.
+
+**Definition 1**: A subsequence `B` of a sequence `A` is a sequence which is obtained by deleting zero or more elements from the sequence.  
+**Definition 2**: A subsequence `B = [(b_1, v_1), (b_2, v_2), ..., (b_M, v_M)]` of the given sequence is called *increasing* if for every `i`, `b_i < b_(i + 1)`.  
+**Definition 3**: A *weight* of subsequence is defined with the sum: `Weight(B) = v_1 + v_2 + ... + v_M`.
+
+The task is to find increasing subsequence `B` with the maximum weight in the given sequence `A`.
+
+**Input Format:**  
+The first line of input contains a single integer `T`, denoting number of test cases. The first line of each test case contains the length `N` of a sequence. The next line contains `a_1, a_2, ..., a_N` separated by a single space. The next line contains `w_1, w_2, ..., w_N` separated by a single space.
+
+**Output Format:**  
+For each test case output a single integer: the maximum weight of increasing subsequences of the given sequence.
+
+**Sample Input:**  
+```
+2  
+4  
+1 2 3 4  
+10 20 30 40  
+8  
+1 2 3 4 1 2 3 4  
+10 20 30 40 15 15 15 50
+```
+
+**Sample Output:**  
+```
+100  
+110
+```
+
+### 7. No Prefix Set
+Given `N` strings. Each string contains only lowercase letters from `a` to `j` (both inclusive). The set of `N` strings is said to be GOOD if no string is prefix of another string else, it is BAD. If two strings are identical, they are considered prefixes of each other.
+
+For example, `aab`, `abcde`, `aabcd` are BAD because `aab` is prefix of `aabcd`.
+
+Print `GOOD` if it satisfies the problem requirement. Else, print `BAD` and the first string for which the condition fails.
+
+**Input Format:**  
+First line contains `N`, the number of strings in the set.
+Then next `N` lines follow, where `i`-th line contains `i`-th string.
+
+**Output Format:**   
+Output `GOOD` if the set is valid. Else, output `BAD` followed by the first string for which the condition fails.
+
+**Sample Input:**
+```
+7
+aab
+defgab
+abcde
+aabcde
+cedaaa
+bbbbbbbbbb
+jabjjjad
+```
+
+**Sample Output:**
+```
+BAD
+aabcde
 ```
 
 <!-- LINKS -->
