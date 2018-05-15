@@ -7,10 +7,10 @@ Write code to remove duplicates from an unsorted linked list.
 ### 2. Circular list
 Given a circular linked list, implement an algorithm which returns node at the beginning of the loop.
 
-**DEFINITION**
+**DEFINITION**  
 Circular linked list: A linked list in which a node’s next pointer points to an earlier node, so as to make a loop in the linked list. For more information see [Wikipedia][circular_list].
 
-**EXAMPLE**
+**EXAMPLE**  
 *input:* A -> B -> C -> D -> E -> C [the same C as earlier]
 *output:* C
 
@@ -41,11 +41,11 @@ By this logic, we say a sequence of brackets is considered to be balanced if the
 
 Given  strings of brackets, determine whether each sequence of brackets is balanced. If a string is balanced, print `YES` on a new line; otherwise, print `NO` on a new line.
 
-**Input format**
+**Input format**  
 The first line contains a single integer, `n`, denoting the number of strings.
 Each line `i` of the `n` subsequent lines consists of a single string, `s`, denoting a sequence of brackets.
 
-**Output format**
+**Output format**  
 For each string, print whether or not the string of brackets is balanced on a new line. If the brackets are balanced, print `YES`; otherwise, print `NO`.
 
 **Sample input**
@@ -66,7 +66,7 @@ YES
 ### 2. Equal stacks
 You have `N` stacks of integer numbers. Let us define height of a stack as sum of all numbers containing in that stack. Find the maximum possible height of the stacks such that all of the stacks are exactly the same height. This means you must remove zero or more integers from the top of zero or more of the `N` stacks until they are all the same height, then print the height. The removals must be performed in such a way as to maximize the height.
 
-**ILLUSTRATION**
+**ILLUSTRATION**  
 Initially, the stacks look like this:
 <p align="center">
   <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645257-57311b88de-piles1.png" />
@@ -76,17 +76,17 @@ Observe that the three stacks are not all the same height. To make all stacks of
   <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645312-e48f85c176-piles2.png" />
 </p>
 
-**Input Format**
+**Input Format**  
 The first line contains `n` space-separated integers, describing the respective number of items in stacks `1`, `2`, ... `n`. The subsequent lines describe the respective numbers in a stack from top to bottom:
 * The second line contains `m_1` space-separated integers in stack `1`.
 * The third line contains `m_2` space-separated integers in stack `2`.
 * ...
 * The last line contains `m_n` space-separated integers in stack `n`.
 
-**Output Format**
+**Output Format**  
 Print a single integer denoting the maximum height at which all stacks will be of equal height.
 
-**Sample Input** (in case of three stacks)
+**Sample Input** (in case of three stacks)  
 ```
 5 3 4
 3 2 1 1 1
@@ -104,15 +104,15 @@ Some company that is planning to demolish a number of old, unoccupied buildings 
 
 There are a number of buildings in a certain two-dimensional landscape. Each building has a height, given by `h[i]`. If you join `k` adjacent buildings, they will form a solid rectangle of area `k x min(h[i], h[i + 1], ..., h[i + k - 1])`.
 
-**ILLUSTRATION**
+**ILLUSTRATION**  
 <p align="center">
   <img src="https://s3.amazonaws.com/hr-challenge-images/8136/1436794554-75e178e325-drawing47.svg" />
 </p>
 
-**Input Format**
+**Input Format**  
 The first line contains `n`, the number of buildings. The second line contains `n` space-separated integers, each representing the height of a building.
 
-**Output Format**
+**Output Format**  
 Print a long integer representing the maximum area of rectangle formed.
 
 **Sample Input**
@@ -137,12 +137,12 @@ int minimumMoves(const char *grid, int n, int start_i, int start_j,
                                           int goal_i,  int goal_j);
 ```
 
-**Input Format**
+**Input Format**  
 The first line contains an integer `n`, the size of the grid.
 The following `N` lines contains a string of length `n` that consists of one of the following characters: `X` or `.`, where `X` denotes a forbidden cell, and `.` denotes an allowed cell.
 The last line contains space separated integers `i`, `j`, denoting the initial position of the castle, and `i'`, `j'`, denoting the goal position.
 
-**Output Format**
+**Output Format**  
 Output an integer denoting the minimum number of steps required to move the castle to the goal position.
 
 **Sample Input**
@@ -171,7 +171,7 @@ Given an input stream of  integers, you must perform the following task for each
 
 You are expected to implement algorithm working in `O(n log(n))`.
 
-**EXPLANATION**
+**EXPLANATION**  
 For example you are given the list `[12, 4, 5, 3, 8, 7]`, so we must print the new median on a new line as each integer in the list:
 ```
 1. [ 12 ] -> 12
@@ -182,11 +182,11 @@ For example you are given the list `[12, 4, 5, 3, 8, 7]`, so we must print the n
 5. [ 12, 4, 5, 3, 8, 7 ] -> (5 + 7) / 2 = 6
 ```
 
-**Input Format**
+**Input Format**  
 The first line contains a single integer, `n`, denoting the number of integers in the data stream.
 Each line `i` of the `n` subsequent lines contains an integer, `a_i`, to be added to your list.
 
-**Output Format**
+**Output Format**  
 After each new integer is added to the list, print the list's updated median on a new line as a single double-precision number scaled to `1` decimal place (i.e., `12.3` format).
 
 **Sample Input**
@@ -219,13 +219,13 @@ You are given a sequence `A` in which every element is a pair of integers i.e. `
 
 The task is to find increasing subsequence `B` with the maximum weight in the given sequence `A`.
 
-**Input Format:**
+**Input Format**  
 The first line of input contains a single integer `T`, denoting number of test cases. The first line of each test case contains the length `N` of a sequence. The next line contains `a_1, a_2, ..., a_N` separated by a single space. The next line contains `w_1, w_2, ..., w_N` separated by a single space.
 
-**Output Format:**
+**Output Format**  
 For each test case output a single integer: the maximum weight of increasing subsequences of the given sequence.
 
-**Sample Input:**
+**Sample Input**
 ```
 2
 4
@@ -236,7 +236,7 @@ For each test case output a single integer: the maximum weight of increasing sub
 10 20 30 40 15 15 15 50
 ```
 
-**Sample Output:**
+**Sample Output**
 ```
 100
 110
@@ -249,14 +249,14 @@ For example, `aab`, `abcde`, `aabcd` are BAD because `aab` is prefix of `aabcd`.
 
 Print `GOOD` if it satisfies the problem requirement. Else, print `BAD` and the first string for which the condition fails.
 
-**Input Format:**
+**Input Format**  
 First line contains `N`, the number of strings in the set.
 Then next `N` lines follow, where `i`-th line contains `i`-th string.
 
-**Output Format:**
+**Output Format**  
 Output `GOOD` if the set is valid. Else, output `BAD` followed by the first string for which the condition fails.
 
-**Sample Input:**
+**Sample Input**
 ```
 7
 aab
@@ -268,7 +268,7 @@ bbbbbbbbbb
 jabjjjad
 ```
 
-**Sample Output:**
+**Sample Output**
 ```
 BAD
 aabcde
@@ -284,19 +284,19 @@ Note: Each separate number represents an almost sorted interval where the beginn
 
 You are expected to implement algorithm working in `O(n log(n))`.
 
-**Input Format:**
+**Input Format**  
 The first line contains an integer `n`. The second line contains a permutation from 1 to `n`.
 
-**Output Format:**
+**Output Format**  
 Output the number of almost sorted intervals.
 
-**Sample Input:**
+**Sample Input**
 ```
 5
 3 1 2 5 4
 ```
 
-**Sample Output:**
+**Sample Output**
 ```
 8
 ```
@@ -307,19 +307,19 @@ There is an integer array `A` which does not contain more than two elements of t
 
 You are expected to implement algorithm working in `O(n log(n))`.
 
-**Input format:**   
+**Input format**   
 The first line contains an integer, `n`, denoting the number of elements in the array. This is followed by a single line, containing `n` space-separated integers. Please note that there are no leading spaces before the first number, and there are no trailing spaces after the last number.
 
-**Output format:**
+**Output format**  
 A single integer that denotes the number of distinct ascending triplets present in the array.
 
-**Sample Input:**
+**Sample Input**
 ```
 6  
 1 1 2 2 3 4  
 ```
 
-**Sample Output:**
+**Sample Output**
 ```
 4
 ```
