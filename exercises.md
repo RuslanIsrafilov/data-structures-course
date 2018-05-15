@@ -41,14 +41,14 @@ By this logic, we say a sequence of brackets is considered to be balanced if the
 
 Given  strings of brackets, determine whether each sequence of brackets is balanced. If a string is balanced, print `YES` on a new line; otherwise, print `NO` on a new line.
 
-**Input format**  
+**Input format**
 The first line contains a single integer, `n`, denoting the number of strings.
 Each line `i` of the `n` subsequent lines consists of a single string, `s`, denoting a sequence of brackets.
 
-**Output format**  
+**Output format**
 For each string, print whether or not the string of brackets is balanced on a new line. If the brackets are balanced, print `YES`; otherwise, print `NO`.
 
-**Sample input**  
+**Sample input**
 ```
 3
 {[()]}
@@ -66,8 +66,8 @@ YES
 ### 2. Equal stacks
 You have `N` stacks of integer numbers. Let us define height of a stack as sum of all numbers containing in that stack. Find the maximum possible height of the stacks such that all of the stacks are exactly the same height. This means you must remove zero or more integers from the top of zero or more of the `N` stacks until they are all the same height, then print the height. The removals must be performed in such a way as to maximize the height.
 
-**ILLUSTRATION**  
-Initially, the stacks look like this:  
+**ILLUSTRATION**
+Initially, the stacks look like this:
 <p align="center">
   <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645257-57311b88de-piles1.png" />
 </p>
@@ -76,14 +76,14 @@ Observe that the three stacks are not all the same height. To make all stacks of
   <img src="https://s3.amazonaws.com/hr-challenge-images/21404/1465645312-e48f85c176-piles2.png" />
 </p>
 
-**Input Format**  
+**Input Format**
 The first line contains `n` space-separated integers, describing the respective number of items in stacks `1`, `2`, ... `n`. The subsequent lines describe the respective numbers in a stack from top to bottom:
 * The second line contains `m_1` space-separated integers in stack `1`.
 * The third line contains `m_2` space-separated integers in stack `2`.
 * ...
 * The last line contains `m_n` space-separated integers in stack `n`.
 
-**Output Format**  
+**Output Format**
 Print a single integer denoting the maximum height at which all stacks will be of equal height.
 
 **Sample Input** (in case of three stacks)
@@ -109,10 +109,10 @@ There are a number of buildings in a certain two-dimensional landscape. Each bui
   <img src="https://s3.amazonaws.com/hr-challenge-images/8136/1436794554-75e178e325-drawing47.svg" />
 </p>
 
-**Input Format**  
+**Input Format**
 The first line contains `n`, the number of buildings. The second line contains `n` space-separated integers, each representing the height of a building.
 
-**Output Format**  
+**Output Format**
 Print a long integer representing the maximum area of rectangle formed.
 
 **Sample Input**
@@ -137,12 +137,12 @@ int minimumMoves(const char *grid, int n, int start_i, int start_j,
                                           int goal_i,  int goal_j);
 ```
 
-**Input Format**  
+**Input Format**
 The first line contains an integer `n`, the size of the grid.
 The following `N` lines contains a string of length `n` that consists of one of the following characters: `X` or `.`, where `X` denotes a forbidden cell, and `.` denotes an allowed cell.
 The last line contains space separated integers `i`, `j`, denoting the initial position of the castle, and `i'`, `j'`, denoting the goal position.
 
-**Output Format**  
+**Output Format**
 Output an integer denoting the minimum number of steps required to move the castle to the goal position.
 
 **Sample Input**
@@ -171,7 +171,7 @@ Given an input stream of  integers, you must perform the following task for each
 
 You are expected to implement algorithm working in `O(n log(n))`.
 
-**EXPLANATION**  
+**EXPLANATION**
 For example you are given the list `[12, 4, 5, 3, 8, 7]`, so we must print the new median on a new line as each integer in the list:
 ```
 1. [ 12 ] -> 12
@@ -182,11 +182,11 @@ For example you are given the list `[12, 4, 5, 3, 8, 7]`, so we must print the n
 5. [ 12, 4, 5, 3, 8, 7 ] -> (5 + 7) / 2 = 6
 ```
 
-**Input Format**  
+**Input Format**
 The first line contains a single integer, `n`, denoting the number of integers in the data stream.
 Each line `i` of the `n` subsequent lines contains an integer, `a_i`, to be added to your list.
 
-**Output Format**  
+**Output Format**
 After each new integer is added to the list, print the list's updated median on a new line as a single double-precision number scaled to `1` decimal place (i.e., `12.3` format).
 
 **Sample Input**
@@ -213,32 +213,32 @@ After each new integer is added to the list, print the list's updated median on 
 ### 6. Subsequence Weighting
 You are given a sequence `A` in which every element is a pair of integers i.e. `A = [ (a_1, w_1), (a_2, w_2),..., (a_N, w_N) ]`.
 
-**Definition 1**: A subsequence `B` of a sequence `A` is a sequence which is obtained by deleting zero or more elements from the sequence.  
-**Definition 2**: A subsequence `B = [(b_1, v_1), (b_2, v_2), ..., (b_M, v_M)]` of the given sequence is called *increasing* if for every `i`, `b_i < b_(i + 1)`.  
+**Definition 1**: A subsequence `B` of a sequence `A` is a sequence which is obtained by deleting zero or more elements from the sequence.
+**Definition 2**: A subsequence `B = [(b_1, v_1), (b_2, v_2), ..., (b_M, v_M)]` of the given sequence is called *increasing* if for every `i`, `b_i < b_(i + 1)`.
 **Definition 3**: A *weight* of subsequence is defined with the sum: `Weight(B) = v_1 + v_2 + ... + v_M`.
 
 The task is to find increasing subsequence `B` with the maximum weight in the given sequence `A`.
 
-**Input Format:**  
+**Input Format:**
 The first line of input contains a single integer `T`, denoting number of test cases. The first line of each test case contains the length `N` of a sequence. The next line contains `a_1, a_2, ..., a_N` separated by a single space. The next line contains `w_1, w_2, ..., w_N` separated by a single space.
 
-**Output Format:**  
+**Output Format:**
 For each test case output a single integer: the maximum weight of increasing subsequences of the given sequence.
 
-**Sample Input:**  
+**Sample Input:**
 ```
-2  
-4  
-1 2 3 4  
-10 20 30 40  
-8  
-1 2 3 4 1 2 3 4  
+2
+4
+1 2 3 4
+10 20 30 40
+8
+1 2 3 4 1 2 3 4
 10 20 30 40 15 15 15 50
 ```
 
-**Sample Output:**  
+**Sample Output:**
 ```
-100  
+100
 110
 ```
 
@@ -249,11 +249,11 @@ For example, `aab`, `abcde`, `aabcd` are BAD because `aab` is prefix of `aabcd`.
 
 Print `GOOD` if it satisfies the problem requirement. Else, print `BAD` and the first string for which the condition fails.
 
-**Input Format:**  
+**Input Format:**
 First line contains `N`, the number of strings in the set.
 Then next `N` lines follow, where `i`-th line contains `i`-th string.
 
-**Output Format:**   
+**Output Format:**
 Output `GOOD` if the set is valid. Else, output `BAD` followed by the first string for which the condition fails.
 
 **Sample Input:**
@@ -273,6 +273,57 @@ jabjjjad
 BAD
 aabcde
 ```
+
+### 8. Almost sorted interval
+**Definition:**: An *almost sorted interval* is a consecutive subsequence in a sequence which satisfies the following property:
+1. The first number is the smallest.
+2. The last number is the largest.
+
+The task is to count the number of almost sorted intervals in the given sequence.  
+Note: Each separate number represents an almost sorted interval where the beginning is equal to the end.  
+
+You are expected to implement algorithm working in `O(n log(n))`.
+
+**Input Format:**
+The first line contains an integer `n`. The second line contains a permutation from 1 to `n`.
+
+**Output Format:**
+Output the number of almost sorted intervals.
+
+**Sample Input:**
+```
+5
+3 1 2 5 4
+```
+
+**Sample Output:**
+```
+8
+```
+The subsequences `[3]`, `[1]`, `[1 2]`, `[1 2 5]`, `[2]`, `[2 5]`, `[5]`, `[4]` are almost sorted intervals.
+
+### 9. Triplets
+There is an integer array `A` which does not contain more than two elements of the same value. How many distinct ascending triples `A[i] < A[j] < A[k]`, `i < j < k` are present?
+
+You are expected to implement algorithm working in `O(n log(n))`.
+
+**Input format:**   
+The first line contains an integer, `n`, denoting the number of elements in the array. This is followed by a single line, containing `n` space-separated integers. Please note that there are no leading spaces before the first number, and there are no trailing spaces after the last number.
+
+**Output format:**
+A single integer that denotes the number of distinct ascending triplets present in the array.
+
+**Sample Input:**
+```
+6  
+1 1 2 2 3 4  
+```
+
+**Sample Output:**
+```
+4
+```
+The distinct triplets are `(1,2,3)`, `(1,2,4)`, `(1,3,4)`, `(2,3,4)`. The elements of the array might not be sorted. Make no assumptions of the same.
 
 <!-- LINKS -->
 [circular_list]: https://en.wikipedia.org/wiki/Linked_list#Circular_linked_list
