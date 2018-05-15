@@ -1,5 +1,5 @@
 #include <stack>
-#include <stack>
+#include <queue>
 #include <tuple>
 #include <stdexcept>
 #include <iostream>
@@ -55,23 +55,7 @@ public:
     _root(nullptr) { }
 
   ~BinaryTree() {
-    std::stack<Node<Key, Value> *> stack;
-    stack.push(_root);
-
-    while (!stack.empty()) {
-      Node<Key, Value> *n = stack.top();
-      stack.pop();
-
-      if (n->right()) {
-        stack.push(n->right());
-      }
-
-      if (n->left()) {
-        stack.push(n->left());
-      }
-
-      delete n;
-    }
+    // delete_recursive(_root);
   }
 
   void insert(const Key &key,
@@ -108,24 +92,20 @@ public:
   }
 
   const Value &find(const Key &key) {
-    auto current = _root;
-    while (current) {
-        if (key < current->key()) {
-          current = current->left();
-        }
-        else if (key > current->key()) {
-          current = current->right();
-        }
-        else {
-          break;
-        }
+    Node<Key, Value> *current = _root;
+    while (current != nullptr) {
+      if (key > current->key()) {
+        current = current->right();
+      }
+      else if (key < current->key()) {
+        current = current->left();
+      }
+      else {
+        return current->value();
+      }
     }
 
-    if (!current) {
-      throw std::runtime_error("Key is not found");
-    }
-
-    return current->value();
+    throw std::runtime_error("Key is not found");
   }
 
   bool empty() const {
@@ -149,6 +129,72 @@ public:
     if (n->left()) {
       debug_print_inorder(n->left(), level + 1);
     }
+  }
+
+  void print_dfs_recursive() {
+    print_dfs_recursive(_root);
+    std::cout << std::endl;
+  }
+
+  // Depth First Search (DFS)
+  void print_dfs_recursive(Node<Key, Value> *node) {
+    if (!node) {
+      return;
+    }
+
+    std::cout << node->key() << " ";
+
+    if (node->left()) {
+      print_dfs_recursive(node->left());
+    }
+
+    if (node->right()) {
+      print_dfs_recursive(node->right());
+    }
+  }
+
+  // Depth First Search (DFS)
+  void print_dfs_stack() {
+    std::stack< Node<Key, Value> *> stack;
+    stack.push(_root);
+
+    while (!stack.empty()) {
+      auto n = stack.top();
+      stack.pop();
+
+      if (n->right()) {
+        stack.push(n->right());
+      }
+
+      if (n->left()) {
+        stack.push(n->left());
+      }
+
+      std::cout << n->key() << " ";
+    }
+    std::cout << std::endl;
+  }
+
+  // Breadth First Search (BFS)
+  void print_bfs() {
+    std::queue< Node<Key, Value> *> queue;
+    queue.push(_root);
+
+    while (!queue.empty()) {
+      auto n = queue.front();
+      queue.pop();
+
+      if (n->right()) {
+        queue.push(n->right());
+      }
+
+      if (n->left()) {
+        queue.push(n->left());
+      }
+
+      std::cout << n->key() << " ";
+    }
+    std::cout << std::endl;
   }
 
 private:

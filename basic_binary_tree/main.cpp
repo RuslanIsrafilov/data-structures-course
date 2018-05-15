@@ -3,17 +3,21 @@
 #include "basic_binary_tree.hpp"
 
 int main(int argc, char const *argv[]) {
-  BinaryTree<int, std::string> map;
+  BinaryTree<int, std::string> bt;
 
-  map.insert(10, "A");
-  map.insert(5,  "B");
-  map.insert(3,  "C");
-  map.insert(7,  "D");
-  map.insert(15, "E");
-  map.insert(12, "F");
-  map.insert(17, "G");
+  bt.insert(10, "A");
+  bt.insert(5,  "B");
+  bt.insert(3,  "C");
+  bt.insert(7,  "D");
+  bt.insert(15, "E");
+  bt.insert(12, "F");
+  bt.insert(17, "G");
 
-  map.debug_print();
+  bt.debug_print();
+
+  std::cout << "Recursive DFS: "; bt.print_dfs_recursive();
+  std::cout << "Stack DFS: "; bt.print_dfs_stack();
+  std::cout << "BFS: "; bt.print_bfs();
 
   return 0;
 }
